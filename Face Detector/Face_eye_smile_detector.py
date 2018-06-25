@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu May 10 21:26:19 2018
-
 @author: Vinay Sannaiah
 """
 #Libraries
-import cv2
+import cv2 # import openCV
 
 #Load the cascades
-face_cascade  =  cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-eye_cascade   =  cv2.CascadeClassifier('haarcascade_eye.xml')
-smile_cascade =  cv2.CascadeClassifier('haarcascade_smile.xml')
+face_cascade  =  cv2.CascadeClassifier('haarcascade_frontalface_default.xml') # Haar cascade file for face detection
+eye_cascade   =  cv2.CascadeClassifier('haarcascade_eye.xml') # Haar cascade file for eye detcction
+smile_cascade =  cv2.CascadeClassifier('haarcascade_smile.xml') # Haar cascade file for smile detection
 
 #Functions
 
@@ -36,11 +34,11 @@ video = cv2.VideoCapture(0) # takes the arg 0 - Internal webcam and 1 - External
 while True:
     _,frame = video.read() #(underscore): we wont be using the first element that is returned by video capture
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY) #Converting the last frame to gray value
-    detection = detect(frame, gray)
-    cv2.imshow('Video', detection)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    detection = detect(frame, gray) # call the detect function to do the necessary detections and to add the bounding box around it.
+    cv2.imshow('Video', detection) # display the webcam video with the bounding boxes.
+    if cv2.waitKey(1) & 0xFF == ord('q'): # close the webcam window when 'q' is pressed.
         break
     
-video.release()
-cv2.destroyAllWindows()
+video.release() # release the webcam
+cv2.destroyAllWindows() # destroy all the windows
     
