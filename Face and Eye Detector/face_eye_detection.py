@@ -30,5 +30,6 @@ def detect(color_img, gray_img):
     for (x, y, w, h) in faces: # For each detected face:
         cv2.rectangle(img = color_img, pt1 = (x,y),
                       pt2 = (x+w, y+h), color = (255,100,100), thickness = 3) # draw a rectangle around the face
-    
+        roi_gray = gray_img[y:y+h, x:x+w] # region of Interest in gray_img i.e the image within the drawn rectangle
+        roi_color = color_img[y:y+h, x:x+w] # region of Interest in color_img i.e the image within the drawn rectangle
     return color_img
