@@ -32,4 +32,8 @@ def detect(color_img, gray_img):
                       pt2 = (x+w, y+h), color = (255,100,100), thickness = 3) # draw a rectangle around the face
         roi_gray = gray_img[y:y+h, x:x+w] # region of Interest in gray_img i.e the image within the drawn rectangle
         roi_color = color_img[y:y+h, x:x+w] # region of Interest in color_img i.e the image within the drawn rectangle
+        eyes = eye_cascade.detectMultiScale(roi_gray, scaleFactor = 1.2, minNeighbors = 20) # We apply the detectMultiScale method to locate one or several eyes in the image.
+        for (ex,ey,ew,eh) in eyes: # For each detected eye:
+            cv2.rectangle(img = roi_color, pt1 = (ex,ey),
+                      pt2 = (ex+ew, ey+eh), color = (100,255,100), thickness = 2) # We paint a rectangle around the eyes, but inside the region of interest selected i.e., the face.
     return color_img
