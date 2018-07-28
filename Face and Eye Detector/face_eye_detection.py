@@ -37,3 +37,5 @@ def detect(color_img, gray_img):
             cv2.rectangle(img = roi_color, pt1 = (ex,ey),
                       pt2 = (ex+ew, ey+eh), color = (100,255,100), thickness = 2) # We paint a rectangle around the eyes, but inside the region of interest selected i.e., the face.
     return color_img
+
+video = cv2.VideoCapture(0) # takes the arg: 0 - Internal webcam (OR) 1 - External webcam
