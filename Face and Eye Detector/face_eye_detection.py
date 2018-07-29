@@ -39,3 +39,15 @@ def detect(color_img, gray_img):
     return color_img
 
 video = cv2.VideoCapture(0) # takes the arg: 0 - Internal webcam (OR) 1 - External webcam
+
+# Call the function to create the bounding boxes around the face and eyes
+while True:
+    _, color_img = video.read() #(underscore): we wont be using the first element that is returned by video capture
+    gray_img = cv2.cvtColor(color_img, cv2.COLOR_BGR2GRAY) #Converting the last frame to the gray value
+    detection = detect(color_img, gray_img) # Get the output of our detect function.
+    cv2.imshow('Video', detection) # Display the outputs.
+    if cv2.waitKey(1) & 0xFF == ord('q'): # If we press 'q' on the keyboard:
+        break # Stop the loop
+        
+video.release() # Turn the webcam off
+cv2.destroyAllWindows() # Destroy all the windows inside which the images were displayed
