@@ -20,10 +20,10 @@ Simple Projects developed using the OpenCV Library
 ## 2. Face and Eye detector
 
 
-  -- Here I have developed a program which detects the user's face aswel s their eyes by using their system's Internal webcam.
+  -- Here I have developed a program which detects the user's face aswell as their eyes by using their system's Internal webcam.
   
   
-  -- Here we shall create a rectangle around the detected face and make it as our rgion of interest to detett the eyes instead of looking      all over the image, using the OpenCV tools.
+  -- Here we shall create a rectangle around the detected face and make it as our region of interest to detect the eyes instead of looking all over the image, using the OpenCV tools.
   
   
   -- This program uses the well known Viola-Jones Algorithm which is basically used for face recognition.
@@ -35,3 +35,6 @@ Simple Projects developed using the OpenCV Library
   -- You can also find the related xml files in the directory.
   
   
+## 3. Smile Detector
+
+  -- Here I have developed a program which detects the user's smile by using the reference of their face.
