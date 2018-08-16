@@ -38,3 +38,12 @@ Simple Projects developed using the OpenCV Library
 ## 3. Smile Detector
 
   -- Here I have developed a program which detects the user's smile by using the reference of their face.
+  
+  
+  -- Initially we try to detect the face using our face_detector program.
+  
+  -- Once the face gets detected, we shall take face ase our region of interest to reduce the conputational power and detect the moth of the user.
+  
+ -- When the user smiles, depending upon their lips movement a smile is detected using Haarlike features.
+ 
+ -- All the required xml files for the cascade detector has been uploaded in the working folder.
